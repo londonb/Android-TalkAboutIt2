@@ -15,9 +15,8 @@ public class Category {
 
     public Category() {}
 
-    public Category(String name, List<Post> posts) {
+    public Category(String name) {
         this.name = name;
-        this.posts = posts;
     }
 
     public String getName() {
