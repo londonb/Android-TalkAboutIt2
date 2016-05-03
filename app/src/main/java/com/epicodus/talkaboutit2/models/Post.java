@@ -13,12 +13,12 @@ public class Post {
     String title;
     String message;
     int voteCount = 0;
-    Category category;
+    String category;
     List<Comment> comments = new ArrayList<>();
 
     public Post() {}
 
-    public Post(String title, String message, Category category) {
+    public Post(String title, String message, String category) {
         this.title = title;
         this.message = message;
         this.category = category;
@@ -36,11 +36,8 @@ public class Post {
         return voteCount;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
 }

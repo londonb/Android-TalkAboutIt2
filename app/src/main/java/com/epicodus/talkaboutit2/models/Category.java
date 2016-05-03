@@ -11,7 +11,6 @@ import java.util.List;
 @Parcel
 public class Category {
     String name;
-    List<Post> posts = new ArrayList<>();
 
     public Category() {}
 
@@ -21,9 +20,5 @@ public class Category {
 
     public String getName() {
         return name;
-    }
-
-    public List<Post> getPosts() {
-        return posts;
     }
 }

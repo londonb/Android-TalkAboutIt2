@@ -1,6 +1,7 @@
 package com.epicodus.talkaboutit2.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,9 @@ import android.widget.TextView;
 
 import com.epicodus.talkaboutit2.R;
 import com.epicodus.talkaboutit2.models.Category;
+import com.epicodus.talkaboutit2.ui.CategoryDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -34,8 +38,10 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 int itemPosition = getLayoutPosition();
-                Log.d("positiion", itemPosition + "");
-                Log.d("category", mCategories.get(itemPosition).getName());
+                Intent intent = new Intent(mContext, CategoryDetailActivity.class);
+                intent.putExtra("position", itemPosition + "");
+                intent.putExtra("categories", Parcels.wrap(mCategories));
+                mContext.startActivity(intent);
             }
         });
     }

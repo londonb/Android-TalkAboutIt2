@@ -7,17 +7,17 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class Comment {
-    Post post;
     String text;
+    String post;
 
     public Comment() {}
 
-    public Comment(String text, Post post) {
+    public Comment(String text, String post) {
         this.text = text;
         this.post = post;
     }
 
-    public Post getPost() {
+    public String getPost() {
         return post;
     }
 
