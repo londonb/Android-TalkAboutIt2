@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mFirebaseCategoriesRef = new Firebase(Constants.FIREBASE_URL_CATEGORIES);
-        mAddedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_CATEGORY);
+        mAddedLocationRef = new Firebase(Constants.FIREBASE_URL_CATEGORIES);
 
         setUpFirebaseQuery();
         setUpRecyclerView();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void saveCategoryToFirebase(String category) {
-        Firebase addedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_CATEGORY);
+        Firebase addedLocationRef = new Firebase(Constants.FIREBASE_URL_CATEGORIES);
         addedLocationRef.push().setValue(category);
         mNewCategory.setText("");
     }

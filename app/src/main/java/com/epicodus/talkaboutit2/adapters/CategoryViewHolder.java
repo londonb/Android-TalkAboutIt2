@@ -39,8 +39,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 int itemPosition = getLayoutPosition();
                 Intent intent = new Intent(mContext, CategoryDetailActivity.class);
-                intent.putExtra("position", itemPosition + "");
-                intent.putExtra("categories", Parcels.wrap(mCategories));
+                intent.putExtra("category", Parcels.wrap(mCategories.get(itemPosition)));
                 mContext.startActivity(intent);
             }
         });
